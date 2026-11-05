@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cambridge Mathematics</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1b4fd8">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#f3f6fb;--card:#fff;--ink:#14213d;--mut:#5a6785;--line:#d5dcea;--acc:#1b4fd8;--ok:#1a7f4b;--bad:#c0322b;--okbg:#e3f4ea;--badbg:#fbe6e4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--card:#18213a;--ink:#eaf0ff;--mut:#9fb0d6;--line:#2b3658;--acc:#6f95ff;--ok:#5fd394;--bad:#ff8a82;--okbg:#14382a;--badbg:#44201f}}
+:root[data-theme="dark"]{--bg:#0e1424;--card:#18213a;--ink:#eaf0ff;--mut:#9fb0d6;--line:#2b3658;--acc:#6f95ff;--ok:#5fd394;--bad:#ff8a82;--okbg:#14382a;--badbg:#44201f}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,"Times New Roman",serif}
+main{max-width:560px;margin:0 auto;padding:16px}
+h1{font-size:26px;margin:8px 0 4px}h2{font-size:20px;margin:16px 0 8px}
+p.s{color:var(--mut);margin:0 0 16px;font-family:system-ui,sans-serif;font-size:14px}
+button{font:600 16px system-ui,sans-serif;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:14px;width:100%;text-align:left;margin:0 0 10px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--acc)}
+button.p{background:var(--acc);color:#fff;border-color:var(--acc);text-align:center}
+button.back{width:auto;padding:8px 12px;font-size:14px;margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.note{border-left:4px solid var(--acc)}
+.sub{display:block;font-weight:400;font-size:13px;color:var(--mut);margin-top:2px}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.ex{font-family:system-ui,sans-serif;font-size:14px;margin-top:8px;color:var(--mut)}
+.big{font-size:44px;font-weight:700;color:var(--acc);margin:4px 0}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;background:var(--acc)}
+.ft{max-width:560px;margin:0 auto;padding:8px 16px 24px;text-align:center;font:14px/1.6 system-ui,sans-serif;color:var(--mut)}.ft a{color:var(--acc);font-weight:600;text-decoration:none}
+.pre{white-space:pre-line}
+.hist{font-family:system-ui,sans-serif;font-size:14px;color:var(--mut)}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<footer class="ft">@Shalom MATEKE<br>WhatsApp: <a href="https://wa.me/258855314161">+258855314161</a></footer>
+<script>
+var D={
+"Grade 7":{lvl:"Cambridge Lower Secondary, Stage 7",topics:{
+"Number: Fractions":{note:"To add fractions, find a common denominator. 1/2 + 1/3 = 3/6 + 2/6 = 5/6. To multiply, multiply tops and bottoms. To divide, flip the second fraction and multiply.",q:[
+["3/4 + 1/8 = ?",["7/8","4/12","5/8","1/2"],0,"3/4 = 6/8, so 6/8 + 1/8 = 7/8."],
+["2/3 × 3/5 = ?",["5/8","2/5","6/8","1/5"],1,"Multiply tops (6) and bottoms (15): 6/15 = 2/5."],
+["1/2 ÷ 1/4 = ?",["1/8","2","4","1/2"],1,"Flip and multiply: 1/2 × 4 = 2."],
+["Which is largest?",["3/5","2/3","5/8","7/12"],1,"As decimals: 0.6, 0.667, 0.625, 0.583."]]},
+"Algebra: Simple equations":{note:"Do the same thing to both sides to get x alone. Undo addition with subtraction, and multiplication with division.",q:[
+["Solve x + 7 = 15",["x = 8","x = 22","x = 7","x = 9"],0,"15 − 7 = 8."],
+["Solve 3x = 18",["x = 15","x = 21","x = 6","x = 54"],2,"Divide both sides by 3."],
+["Solve 2x + 5 = 17",["x = 6","x = 11","x = 4","x = 5"],0,"Subtract 5: 2x = 12, then divide by 2."],
+["Simplify 4a + 3a",["12a","7a","7a²","a"],1,"Add like terms: 4a + 3a = 7a."]]}}},
+"Grade 8":{lvl:"Cambridge Lower Secondary, Stage 8",topics:{
+"Geometry: Angles":{note:"Angles on a straight line add to 180°. Angles in a triangle add to 180°. Angles around a point add to 360°.",q:[
+["Two angles on a straight line: one is 115°. The other is?",["75°","65°","245°","55°"],1,"180 − 115 = 65°."],
+["Two angles of a triangle are 50° and 60°. The third is?",["70°","60°","80°","110°"],0,"180 − 110 = 70°."],
+["Angles around a point total?",["180°","90°","270°","360°"],3,"A full turn is 360°."],
+["An isosceles triangle has a top angle of 40°. Each base angle is?",["70°","40°","140°","80°"],0,"(180 − 40) ÷ 2 = 70°."]]},
+"Number: Percentages":{note:"Percent means out of 100. To find p% of a number, multiply by p/100. Percentage change = change ÷ original × 100.",q:[
+["20% of 150 = ?",["20","25","30","15"],2,"0.2 × 150 = 30."],
+["A shirt costs $40 and is reduced by 25%. New price?",["$30","$10","$35","$25"],0,"25% of 40 = 10, so 40 − 10 = 30."],
+["Write 3/8 as a percentage.",["38%","37.5%","83%","30%"],1,"3 ÷ 8 = 0.375 = 37.5%."],
+["Price rises from $50 to $60. Percentage increase?",["10%","16.7%","20%","60%"],2,"Change 10 ÷ original 50 = 0.2 = 20%."]]}}},
+"Grade 9":{lvl:"Cambridge Lower Secondary, Stage 9",topics:{
+"Algebra: Expanding and factorising":{note:"Expand: a(b + c) = ab + ac. (x + a)(x + b) = x² + (a + b)x + ab. Factorising is the reverse: look for a common factor first.",q:[
+["Expand 3(x + 4)",["3x + 4","3x + 12","x + 12","3x + 7"],1,"Multiply both terms by 3."],
+["Expand (x + 2)(x + 3)",["x² + 5x + 6","x² + 6","x² + 5x + 5","2x + 5"],0,"x² + 3x + 2x + 6."],
+["Factorise 6x + 9",["6(x + 9)","3(2x + 3)","9(x + 6)","x(6 + 9)"],1,"The common factor is 3."],
+["Factorise x² − 9",["(x − 3)²","(x − 9)(x + 1)","(x − 3)(x + 3)","x(x − 9)"],2,"Difference of two squares: a² − b² = (a − b)(a + b)."]]},
+"Mensuration: Circles":{note:"Circumference = 2πr. Area = πr². Use π = 3.14 or your calculator's π. Arc length = (angle/360) × 2πr.",q:[
+["Circle radius 7 cm. Area? (π = 22/7)",["44 cm²","154 cm²","49 cm²","22 cm²"],1,"π r² = 22/7 × 49 = 154."],
+["Circle diameter 10 cm. Circumference? (π = 3.14)",["15.7 cm","31.4 cm","78.5 cm","62.8 cm"],1,"π × d = 3.14 × 10 = 31.4."],
+["Area of a circle is 25π cm². Radius?",["5 cm","25 cm","12.5 cm","10 cm"],0,"r² = 25, so r = 5."],
+["Arc of a 90° sector, radius 4 cm. Length? (in terms of π)",["2π","4π","π","8π"],0,"90/360 × 2π × 4 = 2π."]]}}},
+"Grade 10":{lvl:"Cambridge IGCSE Mathematics 0580, Extended",topics:{
+"Algebra: Quadratic equations":{note:"Solve by factorising, or use the formula x = (−b ± √(b² − 4ac)) ÷ 2a for ax² + bx + c = 0. Check by substituting back.",q:[
+["Solve x² − 5x + 6 = 0",["x = 2 or 3","x = −2 or −3","x = 1 or 6","x = 5 or 1"],0,"(x − 2)(x − 3) = 0."],
+["Solve x² = 49",["x = 7 only","x = ±7","x = 24.5","x = ±49"],1,"Square root gives both +7 and −7."],
+["Discriminant of x² + 4x + 4 = 0 (b² − 4ac)?",["16","0","8","−16"],1,"16 − 16 = 0: one repeated root, x = −2."],
+["Solve x² + 3x − 10 = 0",["x = 5 or −2","x = −5 or 2","x = 10 or −1","x = −10 or 1"],1,"(x + 5)(x − 2) = 0."]]},
+"Trigonometry: Right-angled triangles":{note:"SOH CAH TOA: sin = opp/hyp, cos = adj/hyp, tan = opp/adj. Pythagoras: a² + b² = c². Check your calculator is in degree mode.",q:[
+["Right triangle, sides 3 and 4. Hypotenuse?",["5","7","6","12"],0,"√(9 + 16) = 5."],
+["sin 30° = ?",["1","0.5","0.866","0.707"],1,"A standard value to learn."],
+["Opposite = 5, adjacent = 5. Angle θ with tan θ = opp/adj?",["30°","60°","45°","90°"],2,"tan θ = 1, so θ = 45°."],
+["Hypotenuse 10, angle 30°. Opposite side?",["5","8.66","10","20"],0,"opp = 10 × sin 30° = 5."]]}}},
+"Grade 11":{lvl:"Cambridge IGCSE Mathematics 0580, Extended",topics:{
+"Algebra: Simultaneous equations":{note:"Eliminate one letter by adding or subtracting the two equations, or substitute one equation into the other. Then find the second letter and check in both equations.",q:[
+["x + y = 10 and x − y = 4. Find x.",["7","6","3","14"],0,"Add the equations: 2x = 14, so x = 7."],
+["2x + y = 11 and x + y = 7. Find x.",["3","4","5","18"],1,"Subtract: x = 4 (then y = 3)."],
+["y = 2x and x + y = 12. Find y.",["4","6","8","12"],2,"x + 2x = 12, so x = 4 and y = 8."],
+["3x + 2y = 12 and x − 2y = 4. Find y.",["0","2","4","−2"],0,"Add: 4x = 16, x = 4. Then 4 − 2y = 4, so y = 0."]]},
+"Number: Indices and standard form":{note:"a^m × a^n = a^(m+n). a^m ÷ a^n = a^(m−n). (a^m)^n = a^(mn). a^0 = 1. a^(−n) = 1/a^n. Standard form is a × 10^n with 1 ≤ a < 10.",q:[
+["2³ × 2⁴ = ?",["2⁷","2¹²","4⁷","2¹"],0,"Add the powers: 3 + 4 = 7."],
+["5⁰ = ?",["0","5","1","undefined"],2,"Any non-zero number to the power 0 is 1."],
+["4⁻² = ?",["−8","1/16","−16","1/8"],1,"4⁻² = 1/4² = 1/16."],
+["Write 45 000 in standard form.",["4.5 × 10⁴","45 × 10³","4.5 × 10³","0.45 × 10⁵"],0,"Move the decimal 4 places: 4.5 × 10⁴."]]}}},
+"Grade 12":{lvl:"Cambridge AS Level Mathematics 9709, Pure 1",topics:{
+"Calculus: Differentiation":{note:"If y = axⁿ then dy/dx = anxⁿ⁻¹. The gradient of a curve at a point is dy/dx at that x value. Stationary points occur where dy/dx = 0.",q:[
+["y = x³. Find dy/dx.",["3x²","x²","3x","x⁴/4"],0,"Multiply by the power, then reduce the power by 1."],
+["y = 4x² − 5x + 1. Find dy/dx.",["8x − 5","4x − 5","8x² − 5","8x + 1"],0,"4x² gives 8x, −5x gives −5, the constant gives 0."],
+["Find the gradient of y = x² at x = 3.",["3","6","9","2"],1,"dy/dx = 2x = 6 when x = 3."],
+["Find the x value of the stationary point of y = x² − 6x + 5.",["x = 3","x = 6","x = −3","x = 5"],0,"dy/dx = 2x − 6 = 0, so x = 3."]]},
+"Calculus: Integration":{note:"∫xⁿ dx = xⁿ⁺¹/(n + 1) + c (n ≠ −1). For a definite integral, substitute the upper limit, then subtract the value at the lower limit.",q:[
+["∫2x dx = ?",["x² + c","2x² + c","2 + c","x + c"],0,"Add 1 to the power and divide by the new power."],
+["∫3x² dx = ?",["x³ + c","3x³ + c","6x + c","x³/3 + c"],0,"3x³/3 = x³."],
+["Evaluate ∫ x dx from 0 to 2.",["1","2","4","0.5"],1,"[x²/2] from 0 to 2 = 2 − 0 = 2."],
+["dy/dx = 4x and the curve passes through (0, 3). Find y.",["y = 2x² + 3","y = 4x² + 3","y = 2x²","y = 4x + 3"],0,"y = 2x² + c. Put x = 0, y = 3: c = 3."]]}}}
+};
+var E={
+"Grade 7":{"Geometry: Perimeter and area":{note:"Rectangle: area = length × width, perimeter = 2 × (length + width). Triangle: area = ½ × base × height. Square: perimeter = 4 × side.",q:[
+["A rectangle is 8 cm by 5 cm. What is its area?",["26 cm²","40 cm²","13 cm²","80 cm²"],1,"8 × 5 = 40 cm²."],
+["The same rectangle, 8 cm by 5 cm. What is its perimeter?",["40 cm","13 cm","26 cm","30 cm"],2,"2 × (8 + 5) = 26 cm."],
+["A triangle has base 10 cm and height 6 cm. Area?",["60 cm²","30 cm²","16 cm²","15 cm²"],1,"½ × 10 × 6 = 30 cm²."],
+["A square has perimeter 20 cm. What is the side length?",["5 cm","10 cm","4 cm","80 cm"],0,"20 ÷ 4 = 5 cm."]]}},
+"Grade 8":{"Algebra: Sequences":{note:"In an arithmetic sequence you add the same number each time (the common difference d). nth term = dn + (first term − d). In a geometric sequence you multiply by the same number each time.",q:[
+["Next term: 3, 7, 11, 15, ?",["18","19","20","17"],1,"Add 4 each time: 15 + 4 = 19."],
+["nth term of 5, 8, 11, 14, ...",["3n + 2","3n + 5","5n + 3","n + 3"],0,"d = 3, and 5 − 3 = 2, so 3n + 2."],
+["The nth term is 2n + 1. Find the 10th term.",["20","21","12","22"],1,"2 × 10 + 1 = 21."],
+["Next term: 2, 4, 8, 16, ?",["20","24","32","18"],2,"Multiply by 2 each time."]]}},
+"Grade 9":{"Statistics: Averages":{note:"Mean = total ÷ number of values. Median = middle value when in order. Mode = most common value. Range = largest − smallest.",q:[
+["Mean of 4, 6, 8, 10, 12?",["7","8","9","10"],1,"Total 40 ÷ 5 = 8."],
+["Median of 3, 9, 5, 7, 1?",["5","7","3","9"],0,"In order: 1, 3, 5, 7, 9. The middle value is 5."],
+["Mode of 2, 3, 3, 5, 7, 3, 8?",["2","3","5","7"],1,"3 appears most often."],
+["Range of 12, 5, 20, 8?",["8","15","20","25"],1,"20 − 5 = 15."]]}},
+"Grade 10":{"Number: Ratio and proportion":{note:"Share in a ratio: add the parts, find one part, then multiply. Direct proportion: find the cost of 1 item first. Map scale 1:n means 1 cm on the map is n cm in real life.",q:[
+["Share 60 in the ratio 2 : 3. What is the larger share?",["24","36","30","40"],1,"5 parts, so 1 part = 12. 3 × 12 = 36."],
+["Simplify the ratio 18 : 24.",["2 : 3","3 : 4","9 : 12","6 : 8"],1,"Divide both by 6."],
+["5 pens cost $15. What do 8 pens cost?",["$20","$24","$30","$12"],1,"1 pen = $3, so 8 pens = $24."],
+["Map scale 1 : 50 000. A road is 4 cm on the map. Real length?",["2 km","20 km","0.2 km","200 km"],0,"4 × 50 000 = 200 000 cm = 2 km."]]}},
+"Grade 11":{"Probability":{note:"P(event) = favourable outcomes ÷ total outcomes. P(not A) = 1 − P(A). For independent events, P(A and B) = P(A) × P(B).",q:[
+["A bag has 3 red and 7 blue counters. P(red)?",["3/7","3/10","7/10","1/3"],1,"3 red out of 10 counters."],
+["P(rain) = 0.35. What is P(no rain)?",["0.35","0.65","0.7","1.35"],1,"1 − 0.35 = 0.65."],
+["Two fair coins are tossed. P(both heads)?",["1/2","1/4","1/3","3/4"],1,"1/2 × 1/2 = 1/4."],
+["A fair die is rolled. P(an even number)?",["1/6","1/3","1/2","2/3"],2,"2, 4, 6 are even: 3 out of 6."]]}},
+"Grade 12":{"Coordinate geometry: Straight lines":{note:"Gradient m = (y₂ − y₁) ÷ (x₂ − x₁). Equation: y = mx + c. Midpoint = average of the x values and the y values. Perpendicular gradients multiply to −1.",q:[
+["Gradient of the line through (1, 2) and (3, 8)?",["2","3","6","1/3"],1,"(8 − 2) ÷ (3 − 1) = 3."],
+["Midpoint of (2, 4) and (8, 10)?",["(5, 7)","(10, 14)","(6, 6)","(3, 3)"],0,"(2 + 8)/2 = 5 and (4 + 10)/2 = 7."],
+["A line has gradient 2 and passes through (0, 1). Equation?",["y = 2x + 1","y = x + 2","y = 2x − 1","y = x/2 + 1"],0,"y = mx + c with m = 2, c = 1."],
+["A line has gradient 2. The gradient of a perpendicular line?",["2","−2","1/2","−1/2"],3,"2 × (−1/2) = −1."]]}}
+};
+Object.keys(E).forEach(function(g){Object.keys(E[g]).forEach(function(t){D[g].topics[t]=E[g][t]})});
+var N={
+"Number: Fractions":["Work out 2/3 + 1/4.\nCommon denominator 12: 8/12 + 3/12 = 11/12.","Never add the denominators. 1/2 + 1/3 is not 2/5."],
+"Algebra: Simple equations":["Solve 3x − 4 = 11.\nAdd 4: 3x = 15.\nDivide by 3: x = 5.","Do the same thing to both sides, then check by putting your answer back in."],
+"Geometry: Perimeter and area":["A rectangle is 9 cm by 4 cm.\nArea = 9 × 4 = 36 cm².\nPerimeter = 2 × (9 + 4) = 26 cm.","Area uses square units (cm²). Perimeter uses plain units (cm)."],
+"Geometry: Angles":["Angles on a straight line: 130° and x.\nx = 180 − 130 = 50°.","Angles in a triangle total 180°, but angles around a point total 360°. Do not mix them up."],
+"Number: Percentages":["Increase $80 by 15%.\n15% of 80 = 12.\nNew price = 80 + 12 = $92.","Percentage change is divided by the original value, not the new value."],
+"Algebra: Sequences":["Find the nth term of 7, 11, 15, 19.\nd = 4, and 7 − 4 = 3.\nnth term = 4n + 3.","Check your formula with n = 1. It must give the first term."],
+"Algebra: Expanding and factorising":["Expand (x + 4)(x − 2).\nx² − 2x + 4x − 8 = x² + 2x − 8.","Multiply every term in the first bracket by every term in the second. Watch the negative signs."],
+"Mensuration: Circles":["Radius 5 cm.\nArea = π × 5² = 25π ≈ 78.5 cm².\nCircumference = 2 × π × 5 = 10π ≈ 31.4 cm.","The radius is half the diameter. In the area formula, only the radius is squared, not π."],
+"Statistics: Averages":["Data: 3, 5, 5, 8, 9.\nMean = 30 ÷ 5 = 6.\nMedian = 5. Mode = 5. Range = 9 − 3 = 6.","Put the data in order before finding the median."],
+"Algebra: Quadratic equations":["Solve x² − 7x + 12 = 0.\nTwo numbers that multiply to 12 and add to −7: −3 and −4.\n(x − 3)(x − 4) = 0, so x = 3 or x = 4.","Move everything to one side so the equation equals 0 before factorising."],
+"Trigonometry: Right-angled triangles":["Hypotenuse 12 cm, angle 30°, find the opposite side x.\nsin 30° = x ÷ 12.\nx = 12 × 0.5 = 6 cm.","Label the sides first: opposite, adjacent, hypotenuse. Set your calculator to degrees."],
+"Number: Ratio and proportion":["Divide $90 in the ratio 4 : 5.\n4 + 5 = 9 parts, so 1 part = $10.\nShares: $40 and $50.","Put both quantities in the same units before you simplify a ratio."],
+"Algebra: Simultaneous equations":["Solve x + y = 9 and x − y = 3.\nAdd: 2x = 12, so x = 6.\nThen y = 9 − 6 = 3.","Check your answers in both equations."],
+"Number: Indices and standard form":["Simplify 3⁴ ÷ 3².\nSubtract the powers: 3² = 9.\nStandard form: 0.0006 = 6 × 10⁻⁴.","Add the powers when multiplying. Multiply the powers for (aᵐ)ⁿ."],
+"Probability":["A bag has 4 red and 6 green balls.\nP(green) = 6/10 = 3/5.\nP(not green) = 1 − 3/5 = 2/5.","A probability is always between 0 and 1. If you get more than 1, check your working."],
+"Calculus: Differentiation":["Differentiate y = 3x⁴ − 2x.\ndy/dx = 12x³ − 2.","Multiply by the power first, then reduce the power by 1. A constant becomes 0."],
+"Calculus: Integration":["Integrate 6x² + 2.\n= 2x³ + 2x + c.","Do not forget + c in an indefinite integral."],
+"Coordinate geometry: Straight lines":["Line through (2, 3) and (4, 7).\nm = (7 − 3) ÷ (4 − 2) = 2.\ny − 3 = 2(x − 2), so y = 2x − 1.","Subtract the coordinates in the same order on the top and the bottom."]
+};
+function extra(t){var n=N[t];return n?"<h2>Worked example</h2><div class='card pre'>"+esc(n[0])+"</div><h2>Common mistake</h2><div class='card pre'>"+esc(n[1])+"</div>":""}
+var app=document.getElementById("app"),H=[];
+try{H=JSON.parse(localStorage.getItem("cmr")||"[]")}catch(e){}
+function save(f,t,s,n){H.push({f:f,t:t,s:s,n:n,d:new Date().toLocaleDateString()});H=H.slice(-60);try{localStorage.setItem("cmr",JSON.stringify(H))}catch(e){}}
+function best(f,t){var b=null;H.forEach(function(h){if(h.f==f&&h.t==t){var p=Math.round(h.s/h.n*100);if(b===null||p>b)b=p}});return b}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function prog(f){var k=Object.keys(D[f].topics),n=0;k.forEach(function(t){if(best(f,t)!==null)n++});return n+" of "+k.length+" topics practised"}
+function mix(f){var a=[];Object.keys(D[f].topics).forEach(function(k){a=a.concat(D[f].topics[k].q)});return a.sort(function(){return Math.random()-.5})}
+function home(){var h="<h1>Cambridge Mathematics</h1><p class='s'>Revision and self-marked practice, Grades 7 to 12</p>";
+Object.keys(D).forEach(function(f){h+="<button data-f='"+f+"'>"+f+"<span class='sub'>"+D[f].lvl+" · "+prog(f)+"</span></button>"});
+if(H.length){h+="<h2>Recent scores</h2><div class='card hist'>";H.slice(-5).reverse().forEach(function(x){h+=esc(x.f)+" · "+esc(x.t==="__test"?"Full grade test":x.t)+": "+x.s+"/"+x.n+" ("+x.d+")<br>"});h+="</div>"}
+app.innerHTML=h;app.querySelectorAll("button[data-f]").forEach(function(b){b.onclick=function(){topics(b.dataset.f)}})}
+function topics(f){var h="<button class='back' id='b'>Back</button><h1>"+f+"</h1><p class='s'>"+D[f].lvl+"</p>";
+var nq=mix(f).length,tb=best(f,"__test");h+="<button data-t='__test'>Full grade test ("+nq+" questions)<span class='sub'>"+(tb===null?"Mixed questions from every topic":"Best score: "+tb+"%")+"</span></button>";
+Object.keys(D[f].topics).forEach(function(t){var b=best(f,t);h+="<button data-t='"+esc(t)+"'>"+esc(t)+"<span class='sub'>"+(b===null?"Not attempted":"Best score: "+b+"%")+"</span></button>"});
+app.innerHTML=h;document.getElementById("b").onclick=home;app.querySelectorAll("button[data-t]").forEach(function(b){b.onclick=function(){if(b.dataset.t==="__test")quiz(f,"__test");else revise(f,b.dataset.t)}})}
+function revise(f,t){var T=D[f].topics[t];app.innerHTML="<button class='back' id='b'>Back</button><h1>"+esc(t)+"</h1><h2>Key ideas</h2><div class='card note'>"+esc(T.note)+"</div>"+extra(t)+"<button class='p' id='go'>Start quiz ("+T.q.length+" questions)</button>";
+document.getElementById("b").onclick=function(){topics(f)};document.getElementById("go").onclick=function(){quiz(f,t)}}
+function quiz(f,t){var Q=t==="__test"?mix(f):D[f].topics[t].q,i=0,sc=0;
+function show(){var q=Q[i],h="<p class='s'>Question "+(i+1)+" of "+Q.length+"</p><div class='bar'><i style='width:"+(i/Q.length*100)+"%'></i></div><div class='card'><b>"+esc(q[0])+"</b></div><div id='o'>";
+q[1].forEach(function(o,k){h+="<button class='opt' data-k='"+k+"'>"+esc(o)+"</button>"});h+="</div><div id='fb'></div>";app.innerHTML=h;
+app.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){pick(+b.dataset.k)}})}
+function pick(k){var q=Q[i],ok=k==q[2];if(ok)sc++;
+app.querySelectorAll(".opt").forEach(function(b,j){b.disabled=true;if(j==q[2])b.classList.add("ok");else if(j==k)b.classList.add("bad")});
+document.getElementById("fb").innerHTML="<div class='card'><b style='color:var(--"+(ok?"ok":"bad")+")'>"+(ok?"Correct":"Not quite")+"</b><div class='ex'>"+esc(q[3])+"</div></div><button class='p' id='nx'>"+(i+1<Q.length?"Next question":"See my score")+"</button>";
+document.getElementById("nx").onclick=function(){i++;if(i<Q.length)show();else done()}}
+function done(){save(f,t,sc,Q.length);var p=Math.round(sc/Q.length*100),m=p>=80?"Excellent work.":p>=50?"Good effort. Review the notes and try again.":"Read the notes again, then retry.";
+app.innerHTML="<h1>Your score</h1><div class='card'><div class='big'>"+sc+" / "+Q.length+"</div><div>"+p+"%. "+m+"</div></div><button class='p' id='r'>Try again</button><button id='n'>"+(t==="__test"?"Topics":"Revision notes")+"</button><button id='h'>All topics</button>";
+document.getElementById("r").onclick=function(){quiz(f,t)};document.getElementById("n").onclick=function(){if(t==="__test")topics(f);else revise(f,t)};document.getElementById("h").onclick=home}
+show()}
+home();
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+</script>
+</body>
+</html>
