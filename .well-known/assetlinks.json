@@ -1,1 +1,9 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.shalom.cambridgemaths",
+        "sha256_cert_fingerprints": ["56:88:61:4E:0E:AB:78:3F:FA:62:0D:A3:24:51:9C:B0:8F:2A:E5:90:46:D8:69:47:BE:6E:C6:71:8E:92:86:0F"]
+      }
+    }]
 
